@@ -1,0 +1,12 @@
+package com.yourdomain.yourproject;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class MyActivity extends Activity
+{
+   
+	public static void asd2(int c, String d)
+    {
+    }
+}
