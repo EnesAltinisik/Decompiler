@@ -111,10 +111,9 @@ public class NewTab {
 				smali = fileToStringSmali(file);
 				smaliPath = createSmaliPath(file);
 			} else {
-				smali = ic;
-				smaliPath = file.getAbsolutePath();
+				smaliPath = file.getAbsolutePath().replaceAll(".apk/", "/");
+				smali = fileToStringSmali(new File(smaliPath));
 			}
-
 			Gui window = Deneme.getWindow();
 
 			Tab tab1 = new Tab();

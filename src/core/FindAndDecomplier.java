@@ -34,7 +34,7 @@ public class FindAndDecomplier {
 		String description = "supported files: " + Arrays.toString(exts).replace('[', '(').replace(']', ')');
 		fileChooser.setFileFilter(new FileNameExtensionFilter(description, exts));
 		fileChooser.setToolTipText("file.open");
-		int ret = fileChooser.showDialog(panel, "file.open");
+		int ret = fileChooser.showDialog(panel, "open");
 		if (ret == JFileChooser.APPROVE_OPTION) {
 			file = fileChooser.getSelectedFile();
 		}
@@ -67,12 +67,9 @@ public class FindAndDecomplier {
 		String[] a;
 		if (dORb.equals("d"))
 			a = new String[] { "apktool", "d", file.getAbsolutePath(), "-o",
-					"forAllProje/" + name + "/"
-							+ file.getName().substring(0, file.getName().length() - 4) };
+					"forAllProje/" + name + "/" + file.getName().substring(0, file.getName().length() - 4) };
 		else
-			a = new String[] { "apktool", "b",
-					"forAllProje/" + name + "/" + name, "-o",
-					"outApk/" + name + ".apk" };
+			a = new String[] { "apktool", "b", "forAllProje/" + name + "/" + name, "-o", "outApk/" + name + ".apk" };
 		exec(a);
 	}
 
@@ -90,6 +87,10 @@ public class FindAndDecomplier {
 							System.out.println(line);
 							if (line.contains("    [javac]") && line.contains(" error"))
 								error += line + "\n";
+							if (line.equals("Failure [INSTALL_FAILED_ALREADY_EXISTS]")) {
+								error = line;
+								return;
+							}
 						}
 					} catch (IOException e) {
 						System.out.println("bura");
@@ -152,8 +153,8 @@ public class FindAndDecomplier {
 	public static void isle() throws Exception {
 		String name = FindAndDecomplier.file.getName();
 		name = name.substring(0, name.length() - 4);
-		String[] a = new String[] { "jadx-master/build/jadx/bin/jadx",
-				file.getAbsolutePath(), "-d", "forAllProje/" + name + "/" + file.getName() };
+		String[] a = new String[] { "jadx-master/build/jadx/bin/jadx", file.getAbsolutePath(), "-d",
+				"forAllProje/" + name + "/" + file.getName() };
 		exec(a);
 	}
 

@@ -38,7 +38,6 @@ public class Worker extends SwingWorker<Integer, String> {
 	protected Integer doInBackground() throws Exception {
 		// The number of instances the word is found
 		if (metod.equals("open")) {
-			gui.getFrame().setVisible(true);
 			Component[] cp = gui.getPanel().getComponents();
 			for (int i = 0; i < cp.length; i++) {
 				if (cp[i].getClass().toString().equals("class javax.swing.JTree")) {
@@ -47,21 +46,16 @@ public class Worker extends SwingWorker<Integer, String> {
 				}
 			}
 			publish("chose file");
-			setProgress(0);
 			FindAndDecomplier.openFileApk();
 			publish("opening file");
-			setProgress(30);
 			FindAndDecomplier.isle();
 			publish("opening with apktool");
-			setProgress(60);
 			FindAndDecomplier.apktool("d");
 
-
 			publish("reload frame");
-			setProgress(90);
 			FindAndDecomplier.findNode();
 			gui.jtree = new JTree(FindAndDecomplier.getNode());
-			gui.getPanel().add(gui.jtree,gui.getGbc_tree());
+			gui.getPanel().add(gui.jtree, gui.getGbc_tree());
 			gui.jtree.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
@@ -74,11 +68,8 @@ public class Worker extends SwingWorker<Integer, String> {
 				}
 			});
 			publish("finish");
-			setProgress(100);
-			gui.getFrame().revalidate();
 		} else if (metod.equals("create smali")) {
 			Helper.sm.getBtnCopy().setVisible(false);
-			Helper.sm.getBtnShow().setEnabled(false);
 			publish("creating start!!");
 			String sta, ret, name, parameter, ic;
 			sta = Helper.sm.getComboBox().getSelectedItem().toString();
@@ -89,10 +80,9 @@ public class Worker extends SwingWorker<Integer, String> {
 			publish("creating java code");
 			Helper.writeJavaCode(sta, ret, name, parameter, ic);
 			publish("creting apk");
-			String[] a = new String[] { "ant", "debug", "-f",
-					"projeForSmali" };
+			String[] a = new String[] { "ant", "debug", "-f", "projeForSmali" };
 			FindAndDecomplier.exec(a);
-			String hata=FindAndDecomplier.error;
+			String hata = FindAndDecomplier.error;
 			if (!hata.equals("")) {
 				publish(hata);
 				return -1;
@@ -100,18 +90,45 @@ public class Worker extends SwingWorker<Integer, String> {
 			publish("creating smali file");
 			String[] b = new String[] { "rm", "projeForSmali/out", "-r" };
 			FindAndDecomplier.exec(b);
-			a = new String[] { "apktool", "d",
-					"projeForSmali/bin/MyName-debug-unaligned.apk", "-o",
+			a = new String[] { "apktool", "d", "projeForSmali/bin/MyName-debug-unaligned.apk", "-o",
 					"projeForSmali/out" };
 
 			FindAndDecomplier.exec(a);
-			String smali = Helper.fileToString("projeForSmali/out"
-					+ "/smali/com/yourdomain/yourproject/MyActivity.smali");
+			String smali = Helper
+					.fileToString("projeForSmali/out" + "/smali/com/yourdomain/yourproject/MyActivity.smali");
 			Helper.sm.getLblSmaliCode().setText(smali);
 			publish("finish");
-			Helper.sm.getBtnShow().setEnabled(true);
-			
+			Helper.sm.getBtnCopy().setVisible(true);
+			Helper.sm.getLblSmaliCode().setVisible(true);
 
+		} else if (metod.equals("export")) {
+			Helper.saveAllTab();
+			FindAndDecomplier.apktool("");
+			String[] a = new String[] { "jarsigner", "-verbose", "-sigalg", "SHA1withRSA", "-digestalg", "SHA1",
+					"-keystore", "mykey.keystore", "outApk/" + FindAndDecomplier.file.getName(), "alNAme" };
+			String s = "";
+			for (int i = 0; i < a.length; i++) {
+				s += a[i] + " ";
+			}
+			FindAndDecomplier.execSign(a);
+		} else if (metod.equals("exportApk")) {
+			Helper.saveAllTab();
+			FindAndDecomplier.apktool("");
+			String[] a = new String[] { "jarsigner", "-verbose", "-sigalg", "SHA1withRSA", "-digestalg", "SHA1",
+					"-keystore", "mykey.keystore", "outApk/" + FindAndDecomplier.file.getName(), "alNAme" };
+			String s = "";
+			for (int i = 0; i < a.length; i++) {
+				s += a[i] + " ";
+			}
+			FindAndDecomplier.execSign(a);
+			a = new String[] { "adb", "install", "outApk/" + FindAndDecomplier.file.getName() };
+			FindAndDecomplier.exec(a);
+			if (FindAndDecomplier.error.equals("Failure [INSTALL_FAILED_ALREADY_EXISTS]")) {
+				String packageName = Helper.findPackageName();
+				String[] b = { "adb", "uninstall", packageName };
+				FindAndDecomplier.exec(b);
+				FindAndDecomplier.exec(a);
+			}
 		}
 		return 1;
 
@@ -125,7 +142,7 @@ public class Worker extends SwingWorker<Integer, String> {
 		for (final String string : chunks) {
 			messagesTextArea.append(string);
 			messagesTextArea.append("\n");
-			if(string.contains("javac"))
+			if (string.contains("javac"))
 				messagesTextArea.setText(string);
 		}
 	}

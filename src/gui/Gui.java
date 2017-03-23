@@ -56,21 +56,13 @@ public class Gui {
 	public JTree jtree;
 	JTextArea jt;
 	GridBagConstraints gbc_tree;
+
 	public GridBagConstraints getGbc_tree() {
 		return gbc_tree;
 	}
 
 	public void setGbc_tree(GridBagConstraints gbc_tree) {
 		this.gbc_tree = gbc_tree;
-	}
-	JProgressBar jp;
-
-	public JProgressBar getJp() {
-		return jp;
-	}
-
-	public void setJp(JProgressBar jp) {
-		this.jp = jp;
 	}
 
 	public JTextArea getJt() {
@@ -182,6 +174,7 @@ public class Gui {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setDividerLocation(frame.getWidth()/4);
 		
 		panelFind = new JPanel();
 		panelFind.setVisible(false);
@@ -230,6 +223,7 @@ public class Gui {
 
 
 		panel = new JPanel();
+		panel.setBackground(Color.WHITE);
 		splitPane.setLeftComponent(panel);
 		JScrollPane scrollPane = new JScrollPane(panel);
 		GridBagLayout gbl_panel = new GridBagLayout();
@@ -244,13 +238,13 @@ public class Gui {
 		gbc_tree.insets = new Insets(0, 0, 5, 0);
 		gbc_tree.gridx = 0;
 		gbc_tree.gridy = 0;
-		gbc_tree.anchor=GridBagConstraints.NORTH;
+		gbc_tree.anchor=GridBagConstraints.NORTHWEST;
 		panel.add(jtree, gbc_tree);
 		jtree.setVisible(false);
 		
 		
 		jt = new JTextArea();
-		jt.setBackground(Color.LIGHT_GRAY);
+		jt.setBackground(Color.WHITE);
 		jt.setEditable(false);
 		jt.setColumns(5);
 		jt.setRows(5);
@@ -258,16 +252,9 @@ public class Gui {
 		gbc_tree1.insets = new Insets(0, 0, 5, 0);
 		gbc_tree1.gridx = 0;
 		gbc_tree1.gridy = 1;
+		gbc_tree1.anchor=GridBagConstraints.WEST;
 		panel.add(jt, gbc_tree1);
 		jt.setVisible(false);
-		
-		jp = new JProgressBar();
-		jp.setEnabled(false);
-		GridBagConstraints gbc_tree2 = new GridBagConstraints();
-		gbc_tree2.insets = new Insets(0, 0, 5, 0);
-		gbc_tree2.gridx = 0;
-		gbc_tree2.gridy = 2;
-		panel.add(jp, gbc_tree2);
 		
 		btnFind = new JButton("Find");
 		GridBagConstraints gbc_btnFind = new GridBagConstraints();
@@ -277,10 +264,10 @@ public class Gui {
 		btnFind.setVisible(false);
 		panel.add(btnFind, gbc_btnFind);
 		
-		jp.setVisible(false);
 		splitPane.add(scrollPane);
 
 		createMenuBar();
+		
 		frame.getContentPane().add(menuBar, BorderLayout.NORTH);
 		
 		getTreeFind().addMouseListener(new MouseAdapter() {

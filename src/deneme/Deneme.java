@@ -22,7 +22,7 @@ public static void main(String[] args) {
 			public void run() {
 				try {	
 					window = new Gui();	
-					Helper.openApk(window);
+					window.getFrame().setVisible(true);
 					window.getFrame().revalidate();
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
@@ -30,6 +31,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 import javax.swing.JTree;
 import javax.swing.JViewport;
+import javax.swing.ProgressMonitor;
 import javax.swing.SwingWorker;
 import javax.swing.SwingWorker.StateValue;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
@@ -44,6 +46,7 @@ import javax.swing.tree.TreePath;
 import org.zeroturnaround.zip.ZipUtil;
 
 import deneme.Deneme;
+import gui.Dialog;
 import gui.Gui;
 import gui.SmaliWindow;
 
@@ -135,7 +138,7 @@ public class Helper {
 					if (line.contains(find)) {
 						i = line.indexOf(find);
 						colorWrite(line.substring(0, i), jtp);
-						appendToPane(jtp, line.substring(i, i + find.length()), Color.green);
+						appendToPane(jtp, line.substring(i, i + find.length()), new Color(250, 150, 0));
 						if (i + find.length() < line.length())
 							colorWrite(line.substring(i + find.length()) + "\n", jtp);
 					}
@@ -207,7 +210,7 @@ public class Helper {
 				"final", "goto", "implements", "instanceof", "interface", "native", "package", "private", "public",
 				"protected", "return", "super", "strictfp", "switch", "synchronized", "this", "throw", "throws",
 				"transient", "volatile", "assert", "method", ".method", "int", "boolean", "String", "char", "double",
-				"float", "short", "long", "Object", ".end", "android" };
+				"float", "short", "long", "Object", ".end", "android", "string", "name" };
 		boolean word;
 		while (true) {
 			int max = s.length(), ind = -1, leng = 0;
@@ -241,7 +244,7 @@ public class Helper {
 			if (mavi)
 				appendToPane(jp, s.substring(max, max + leng), Color.BLUE);
 			else
-				appendToPane(jp, s.substring(max, max + leng), Color.RED);
+				appendToPane(jp, s.substring(max, max + leng), new Color(0, 150, 50));
 			if ((max + leng) < s.length())
 				s = s.substring(max + leng);
 			else
@@ -267,7 +270,7 @@ public class Helper {
 					jtp.setText("");
 					while ((i = text.indexOf(aranacak)) > -1) {
 						colorWrite(text.substring(0, i), jtp);
-						appendToPane(jtp, text.substring(i, i + aranacak.length()), Color.green);
+						appendToPane(jtp, text.substring(i, i + aranacak.length()), new Color(250, 150, 0));
 						text = text.substring(i + aranacak.length());
 					}
 					colorWrite(text, jtp);
@@ -297,31 +300,31 @@ public class Helper {
 	}
 
 	public static void openApk(Gui gui) {
-		JProgressBar searchProgressBar = gui.getJp();
 		NewTab.openTab.removeAll(NewTab.openTab);
-		searchProgressBar.setValue(0);
 		gui.getJt().setText("");
-		searchProgressBar.setVisible(true);
 		gui.getJt().setVisible(true);
+
+		Dialog dialog = new Dialog();
+		dialog.setVisible(true);
+		dialog.setBounds(gui.getFrame().getBounds().x + gui.getFrame().getBounds().width / 2,
+				gui.getFrame().getBounds().y + gui.getFrame().getBounds().height / 2, 170, 25);
 		SwingWorker searchWorker = new Worker("open", gui.getJt(), gui);
 		searchWorker.addPropertyChangeListener(new PropertyChangeListener() {
 			@Override
 			public void propertyChange(final PropertyChangeEvent event) {
 				switch (event.getPropertyName()) {
 				case "progress":
-					searchProgressBar.setIndeterminate(false);
-					searchProgressBar.setValue((Integer) event.getNewValue());
+					dialog.getProgressBar().setIndeterminate(true);
 					break;
 				case "state":
 					switch ((StateValue) event.getNewValue()) {
 					case DONE:
+						dialog.dispose();
 						gui.getJt().setVisible(false);
-						searchProgressBar.setVisible(false);
 						break;
 					case STARTED:
 					case PENDING:
-						searchProgressBar.setVisible(true);
-						searchProgressBar.setIndeterminate(true);
+						dialog.getProgressBar().setIndeterminate(true);
 						break;
 					}
 					break;
@@ -400,24 +403,83 @@ public class Helper {
 	}
 
 	public static void exportApk() throws Exception {
-		if (Deneme.getWindow().jtree == null)
+		Gui gui = Deneme.getWindow();
+		if (gui.jtree == null)
 			return;
-		saveAllTab();
-		FindAndDecomplier.apktool("");
-		String[] a = new String[] { "jarsigner", "-verbose", "-sigalg", "SHA1withRSA", "-digestalg", "SHA1",
-				"-keystore", "mykey.keystore", "outApk/" + FindAndDecomplier.file.getName(), "alNAme" };
-		String s = "";
-		for (int i = 0; i < a.length; i++) {
-			s += a[i] + " ";
-		}
-		System.out.println(s);
-		FindAndDecomplier.execSign(a);
+		Dialog dialog = new Dialog();
+		dialog.setVisible(true);
+		dialog.setBounds(gui.getFrame().getBounds().x + gui.getFrame().getBounds().width / 2,
+				gui.getFrame().getBounds().y + gui.getFrame().getBounds().height / 2, 170, 25);
+		SwingWorker searchWorker = new Worker("export", gui.getJt(), gui);
+		searchWorker.addPropertyChangeListener(new PropertyChangeListener() {
+			@Override
+			public void propertyChange(final PropertyChangeEvent event) {
+				switch (event.getPropertyName()) {
+				case "progress":
+					dialog.getProgressBar().setIndeterminate(true);
+					break;
+				case "state":
+					switch ((StateValue) event.getNewValue()) {
+					case DONE:
+						dialog.dispose();
+						break;
+					case STARTED:
+					case PENDING:
+						break;
+					}
+					break;
+				}
+			}
+		});
+		searchWorker.execute();
 	}
 
 	public static void exportDeployApk() throws Exception {
-		exportApk();
-		String[] a = new String[] { "adb", "install", "outApk/" + FindAndDecomplier.file.getName() };
-		FindAndDecomplier.exec(a);
+		Gui gui = Deneme.getWindow();
+		if (gui.jtree == null)
+			return;
+		Dialog dialog = new Dialog();
+		dialog.setVisible(true);
+		dialog.setBounds(gui.getFrame().getBounds().x + gui.getFrame().getBounds().width / 2,
+				gui.getFrame().getBounds().y + gui.getFrame().getBounds().height / 2, 170, 25);
+		SwingWorker searchWorker = new Worker("exportApk", gui.getJt(), gui);
+		searchWorker.addPropertyChangeListener(new PropertyChangeListener() {
+			@Override
+			public void propertyChange(final PropertyChangeEvent event) {
+				switch (event.getPropertyName()) {
+				case "progress":
+					dialog.getProgressBar().setIndeterminate(true);
+					break;
+				case "state":
+					switch ((StateValue) event.getNewValue()) {
+					case DONE:
+						dialog.dispose();
+						break;
+					case STARTED:
+					case PENDING:
+						break;
+					}
+					break;
+				}
+			}
+		});
+		searchWorker.execute();
+	}
+
+	public static String findPackageName() throws Exception {
+		String name = FindAndDecomplier.file.getName().substring(0, FindAndDecomplier.file.getName().length() - 4);
+		File file = new File("forAllProje/" + name + "/" + name + "/AndroidManifest.xml");
+
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		String line;
+		while ((line = br.readLine()) != null) {
+			if (line.indexOf("package=\"") > 0) {
+				int i = line.indexOf("package=\"");
+				line = line.substring(i + 9);
+				return line.substring(0, line.indexOf("\""));
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -451,17 +513,17 @@ public class Helper {
 		return null;
 	}
 
-	private static void saveAllTab() {
+	static void saveAllTab() {
 		JTabbedPane tabbed = Deneme.getWindow().getTabbedPane();
 		Component[] com = tabbed.getComponents();
 
 		for (int m = 0; m < com.length; m++) {
 			if (com[m] instanceof JPanel) {
 				if (((JPanel) com[m]).getComponentCount() == 2)
-					try{
-					writeFile(((JTextComponent) getTabData((JPanel) com[m], 1)).getText(),
-							((JTextComponent) getTabData((JPanel) com[m], 0)).getText());
-					}catch (Exception e) {
+					try {
+						writeFile(((JTextComponent) getTabData((JPanel) com[m], 1)).getText(),
+								((JTextComponent) getTabData((JPanel) com[m], 0)).getText());
+					} catch (Exception e) {
 						System.out.println(m);
 					}
 			}
@@ -470,10 +532,11 @@ public class Helper {
 		com = tabbed.getComponents();
 		for (int m = 0; m < com.length; m++) {
 			if (com[m] instanceof JPanel) {
-				if (((JPanel) com[m]).getComponentCount() == 2)try{
-					writeFile(((JTextComponent) getTabData((JPanel) com[m], 1)).getText(),
-							((JTextComponent) getTabData((JPanel) com[m], 0)).getText());
-					}catch (Exception e) {
+				if (((JPanel) com[m]).getComponentCount() == 2)
+					try {
+						writeFile(((JTextComponent) getTabData((JPanel) com[m], 1)).getText(),
+								((JTextComponent) getTabData((JPanel) com[m], 0)).getText());
+					} catch (Exception e) {
 						System.out.println(m);
 					}
 			}
@@ -500,16 +563,22 @@ public class Helper {
 	public static void btnCreateJavaToSmali() throws Exception {
 		sm.getShowDiolag().setText("");
 		sm.getLblSmaliCode().setText("");
+		Dialog dialog = new Dialog();
+		dialog.setVisible(true);
+		dialog.setBounds(sm.getFrame().getBounds().x + sm.getFrame().getBounds().width / 2,
+				sm.getFrame().getBounds().y + sm.getFrame().getBounds().height / 2, 170, 25);
 		SwingWorker searchWorker = new Worker("create smali", sm.getShowDiolag(), null);
 		searchWorker.addPropertyChangeListener(new PropertyChangeListener() {
 			@Override
 			public void propertyChange(final PropertyChangeEvent event) {
 				switch (event.getPropertyName()) {
 				case "progress":
+					dialog.getProgressBar().setIndeterminate(true);
 					break;
 				case "state":
 					switch ((StateValue) event.getNewValue()) {
 					case DONE:
+						dialog.dispose();
 						break;
 					case STARTED:
 					case PENDING:
@@ -520,11 +589,6 @@ public class Helper {
 			}
 		});
 		searchWorker.execute();
-	}
-
-	public static void btnShowSmali() {
-		sm.getBtnCopy().setVisible(true);
-		sm.getLblSmaliCode().setVisible(true);
 	}
 
 	static void writeJavaCode(String sta, String ret, String name, String parameter, String ic) {

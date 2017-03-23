@@ -38,7 +38,6 @@ public class SmaliWindow {
 	private JLabel lblNewLabel_5;
 	private JTextField parameter;
 	private JButton btnCreate;
-	private JButton btnShow;
 	private JTextArea showDiolag;
 	private JTextArea lblSmaliCode;
 	public JPanel panel;
@@ -99,7 +98,7 @@ public class SmaliWindow {
 		
 		JLabel lblNewLabel_1 = new JLabel("public");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
+		gbc_lblNewLabel_1.anchor = GridBagConstraints.NORTHWEST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 0;
 		gbc_lblNewLabel_1.gridy = 1;
@@ -168,13 +167,6 @@ public class SmaliWindow {
 		panel.add(lblSmaliCode, gbc_lblSmaliCode);
 		lblSmaliCode.setVisible(false);
 		
-		btnShow = new JButton("show");
-		btnShow.setEnabled(false);
-		GridBagConstraints gbc_btnShow = new GridBagConstraints();
-		gbc_btnShow.insets = new Insets(0, 0, 5, 5);
-		gbc_btnShow.gridx = 5;
-		gbc_btnShow.gridy = 5;
-		panel.add(btnShow, gbc_btnShow);
 		
 		JLabel lblNewLabel_2 = new JLabel("}");
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
@@ -196,7 +188,7 @@ public class SmaliWindow {
 		btnCreate = new JButton("create smali");
 		GridBagConstraints gbc_btnCreate = new GridBagConstraints();
 		gbc_btnCreate.insets = new Insets(0, 0, 5, 5);
-		gbc_btnCreate.gridx = 3;
+		gbc_btnCreate.gridx = 5;
 		gbc_btnCreate.gridy = 5;
 		panel.add(btnCreate, gbc_btnCreate);
 		
@@ -224,14 +216,6 @@ public class SmaliWindow {
 		getBtnCreate().addActionListener((ActionEvent event) -> {
             try {
 				Helper.btnCreateJavaToSmali();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-        });
-		getBtnShow().addActionListener((ActionEvent event) -> {
-            try {
-				Helper.btnShowSmali();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -390,13 +374,7 @@ public class SmaliWindow {
 		this.btnCreate = btnCreate;
 	}
 
-	public JButton getBtnShow() {
-		return btnShow;
-	}
-
-	public void setBtnShow(JButton btnShow) {
-		this.btnShow = btnShow;
-	}
+	
 
 	public JTextArea getShowDiolag() {
 		return showDiolag;
