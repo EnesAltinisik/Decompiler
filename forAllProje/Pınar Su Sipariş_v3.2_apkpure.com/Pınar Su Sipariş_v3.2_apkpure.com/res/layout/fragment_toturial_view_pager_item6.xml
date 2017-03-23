@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/home_screen" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/linearParent" android:background="#ddffffff" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.pinarsu.siparis.view.TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="@color/blue_light" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/welcome" />
+        <com.pinarsu.siparis.view.TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center" android:id="@id/tvTryApp" android:padding="24.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="12.0dip" android:text="Uygulamayı Keşfedin" style="@style/oval_edge_tutorial_blue_light" />
+        <com.pinarsu.siparis.view.TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/blue_light" android:gravity="center" android:id="@id/tvLogin" android:padding="24.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="12.0dip" android:text="Giriş Yapın" style="@style/oval_edge_tutorial_white" />
+    </LinearLayout>
+</FrameLayout>

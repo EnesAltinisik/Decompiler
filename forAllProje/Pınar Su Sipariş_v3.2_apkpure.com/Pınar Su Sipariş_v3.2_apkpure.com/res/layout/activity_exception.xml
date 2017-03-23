@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/linear" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:clickable="false" android:layout_width="96.0dip" android:layout_height="96.0dip" android:src="@drawable/restart_dark_blue" />
+    <com.pinarsu.siparis.view.TextView android:textSize="16.0dip" android:textColor="@color/blue_dark" android:gravity="center" android:id="@id/tvError" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bilinmeyen bir hata oluştu.\nTekrar Dene." />
+</LinearLayout>

@@ -1,33 +1,30 @@
 package deneme;
 
-import java.awt.EventQueue;
+import gui.Gui;
+import java.io.File;
 
 import core.FindAndDecomplier;
-import core.Helper;
-import gui.Gui;
-import gui.SmaliWindow;
-import gui.Tab;
 
 public class Deneme {
 
 	static Gui window;
-public static Gui getWindow() {
+
+	public static Gui getWindow() {
 		return window;
 	}
+
 	public static void setWindow(Gui window) {
 		Deneme.window = window;
 	}
-public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {	
-					window = new Gui();	
-					window.getFrame().setVisible(true);
-					window.getFrame().revalidate();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+
+	public static void main(String[] args) {
+		window = new Gui();
+		window.getFrame().setVisible(true);
+		
+		File file = new File("jadx-master/build");
+		if (!file.exists()) {
+			String[] a = { "/bin/sh", "-c", "cd jadx-master; ./gradlew dist" };
+			FindAndDecomplier.exec(a);
+		}
 	}
 }

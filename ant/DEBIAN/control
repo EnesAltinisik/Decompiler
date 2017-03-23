@@ -1,0 +1,19 @@
+Package: ant
+Version: 1.8.2-4build1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Installed-Size: 2086
+Depends: default-jre-headless | java2-runtime-headless | java5-runtime-headless | java6-runtime-headless, libxerces2-java
+Recommends: ant-optional
+Suggests: default-jdk | java-compiler | java-sdk, ant-gcj, ant-doc
+Conflicts: libant1.6-java
+Breaks: ant-doc (<= 1.6.5-1)
+Replaces: ant-doc (<= 1.6.5-1), libant1.6-java
+Section: java
+Priority: optional
+Homepage: http://ant.apache.org/
+Description: Java based build tool like make
+ A system independent (i.e. not shell based) build tool that uses XML
+ files as "Makefiles". This package contains the scripts and the core
+ tasks libraries.

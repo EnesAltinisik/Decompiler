@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@drawable/blur_blue_background" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/imBack" android:padding="4.0dip" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/back" android:scaleType="fitCenter" />
+            <com.pinarsu.siparis.view.TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="@color/blue_dark" android:layout_gravity="center" android:id="@id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/confirmation" />
+        </FrameLayout>
+        <ImageView android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_marginTop="12.0dip" android:src="@drawable/oval_button_white" android:scaleType="fitXY" />
+        <LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.pinarsu.siparis.view.TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/blue_dark" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hesabınızı Onaylayın" />
+            <com.pinarsu.siparis.view.TextView android:textSize="16.0dip" android:layout_gravity="center_horizontal" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hesabınızı onaylayın" style="@style/mediumTvStyle" />
+            <FrameLayout android:orientation="horizontal" android:background="#ffeeeeee" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/phone_icon" />
+                <com.pinarsu.siparis.view.EditText android:textSize="16.0dip" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/edPhoneNumber" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="48.0dip" android:layout_marginRight="48.0dip" android:hint="@string/your_phone_number" android:maxEms="10" android:ems="10" android:maxLength="10" android:inputType="phone" style="@style/mediumEdStyle" />
+            </FrameLayout>
+        </LinearLayout>
+        <Button android:textSize="16.0dip" android:textStyle="bold" android:textColor="@android:color/white" android:id="@id/btnSendCode" android:background="@drawable/oval_button_blue" android:layout_width="fill_parent" android:layout_height="64.0dip" android:scaleType="fitXY" android:text="Kodu Gönder" android:textAllCaps="false" style="@null" />
+    </LinearLayout>
+</ScrollView>

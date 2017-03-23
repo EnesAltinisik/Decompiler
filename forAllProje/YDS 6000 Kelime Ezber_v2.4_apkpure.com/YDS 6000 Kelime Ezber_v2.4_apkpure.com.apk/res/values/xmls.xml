@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <xml name="oxford_widget_info">res/xml/oxford_widget_info.xml</xml>
+    <xml name="oxford_widget_info">res/xml-v17/oxford_widget_info.xml</xml>
+    <xml name="pref_general">res/xml/pref_general.xml</xml>
+    <xml name="pref_headers">res/xml/pref_headers.xml</xml>
+    <xml name="pref_notification">res/xml/pref_notification.xml</xml>
+    <xml name="searchable">res/xml/searchable.xml</xml>
+</resources>

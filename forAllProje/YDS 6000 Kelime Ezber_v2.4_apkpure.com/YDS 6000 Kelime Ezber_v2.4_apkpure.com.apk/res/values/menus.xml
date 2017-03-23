@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <menu name="activity_main_drawer">res/menu/activity_main_drawer.xml</menu>
+    <menu name="mainactivity_menu">res/menu/mainactivity_menu.xml</menu>
+    <menu name="menu_helper">res/menu/menu_helper.xml</menu>
+    <menu name="menu_poppupforlearningitem">res/menu/menu_poppupforlearningitem.xml</menu>
+    <menu name="searchactivity_menu">res/menu/searchactivity_menu.xml</menu>
+</resources>

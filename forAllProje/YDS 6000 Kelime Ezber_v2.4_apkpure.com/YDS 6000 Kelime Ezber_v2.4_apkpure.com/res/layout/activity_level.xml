@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/activity_level" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.badoualy.stepperindicator.StepperIndicator android:id="@id/stepIndicator" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip" app:stpi_stepCount="5" />
+    <android.support.v4.view.ViewPager android:id="@id/viewPager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="8.0dip" android:layout_below="@id/stepIndicator" android:layout_centerInParent="true" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</RelativeLayout>

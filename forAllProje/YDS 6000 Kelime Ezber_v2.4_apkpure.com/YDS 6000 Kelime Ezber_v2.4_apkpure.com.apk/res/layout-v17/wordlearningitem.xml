@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res-auto" app:layout_width="match_parent" app:layout_height="match_parent">
+    <android.support.v7.widget.CardView app:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:id="@+id/cardView" app:layout_width="match_parent" app:layout_height="match_parent" app:cardCornerRadius="8dp" app:cardElevation="16dp" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+        <RelativeLayout app:id="@+id/relativeLayoutId" app:layout_width="match_parent" app:layout_height="match_parent">
+            <TextView app:textSize="30sp" app:typeface="sans" app:textStyle="bold" app:textColor="@color/colorPrimaryTextColor" app:id="@+id/title_item" app:layout_width="match_parent" app:layout_height="wrap_content" app:layout_margin="8dp" app:layout_alignParentTop="true" app:textAlignment="center" />
+            <ImageButton app:id="@+id/moreButton" app:background="@color/transparent" app:layout_width="wrap_content" app:layout_height="wrap_content" app:layout_margin="16dp" app:src="@drawable/ic_more_vert_black_24dp" app:layout_alignParentTop="true" app:layout_alignParentRight="true" app:onClick="showPopupMenu" />
+            <View app:id="@+id/splitter" app:background="@color/colorPrimaryTextColor" app:layout_width="match_parent" app:layout_height="UNKNOWN_DATA_0x101" app:layout_below="@+id/title_item" />
+            <TextView app:textSize="14sp" app:typeface="sans" app:textColor="#005fb0" app:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:id="@+id/txt_itemdef" app:padding="16dp" app:layout_width="match_parent" app:layout_height="wrap_content" app:layout_below="@+id/splitter" app:textAlignment="center" />
+            <android.support.design.widget.CoordinatorLayout app:layout_width="match_parent" app:layout_height="match_parent" app:layout_below="@+id/txt_itemdef">
+                <TextView app:textSize="24sp" app:typeface="sans" app:textStyle="bold" app:textColor="#005fb0" app:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:id="@+id/txt_item" app:focusableInTouchMode="true" app:clickable="true" app:layout_width="match_parent" app:layout_height="match_parent" app:textAlignment="center" />
+                <ImageView app:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:id="@+id/sound" app:visibility="visible" app:layout_width="wrap_content" app:layout_height="wrap_content" app:layout_marginBottom="160dp" app:alpha="0.08" app:srcCompat="@drawable/ic_speaker" />
+            </android.support.design.widget.CoordinatorLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

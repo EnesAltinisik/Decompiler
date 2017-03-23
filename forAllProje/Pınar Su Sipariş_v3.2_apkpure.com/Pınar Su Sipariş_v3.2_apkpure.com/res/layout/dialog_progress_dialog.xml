@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/circle_white" android:layout_width="72.0dip" android:layout_height="72.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:layout_gravity="center" android:id="@id/progressBar" android:layout_width="64.0dip" android:layout_height="64.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+</LinearLayout>

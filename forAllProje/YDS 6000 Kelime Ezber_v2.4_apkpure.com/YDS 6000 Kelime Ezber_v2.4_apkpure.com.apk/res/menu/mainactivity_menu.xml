@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res-auto">
+    <item app:icon="0x108004f" app:id="@+id/search" app:title="Search" app:showAsAction="ifRoom|collapseActionView" />
+    <item app:id="@+id/item_samplebadge" app:title="1" app:showAsAction="always" app:actionLayout="@layout/menu_action_item_badge" />
+</menu>

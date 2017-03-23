@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.pinarsu.siparis.view.TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:id="@id/tvBarTitle" android:background="@color/blue_dark" android:paddingLeft="12.0dip" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="kampanya adı" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center" android:id="@id/im" android:layout_width="72.0dip" android:layout_height="72.0dip" android:adjustViewBounds="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.pinarsu.siparis.view.TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="@color/blue_dark" android:id="@id/tvDetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="19 LT Damacana" style="@style/mediumTvStyle" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/map_pin_blue_light" android:scaleType="fitCenter" />
+                <com.pinarsu.siparis.view.TextView android:textSize="12.0dip" android:textColor="@color/blue_dark" android:id="@id/tvAddress" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="Adres" style="@style/mediumTvStyle" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="@color/ce2e1e1" android:layout_width="fill_parent" android:layout_height="1.0sp" />
+</LinearLayout>

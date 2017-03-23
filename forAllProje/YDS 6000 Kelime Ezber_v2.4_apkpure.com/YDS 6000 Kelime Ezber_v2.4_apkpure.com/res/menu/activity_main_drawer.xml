@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:icon="@mipmap/ic_launcher" android:id="@id/nav_level" android:title="Seviye: Başlangıç" app:actionLayout="@layout/myboom_button" />
+        <item android:icon="@drawable/ic_local_grocery_store" android:id="@id/nav_store" android:title="Mağaza" />
+        <item android:icon="@drawable/ic_message_black_48px" android:id="@id/nav_not" android:title="Yeni Cümle Kullanımı" />
+        <item android:icon="@drawable/ic_track_changes_black_48px" android:id="@id/statistic" android:title="İstatistikler" />
+        <item android:icon="@drawable/ic_settings_black_48px" android:id="@id/nav_manage" android:title="Uygulama Ayarları" />
+        <item android:icon="@drawable/ic_volume_up_black_48px" android:id="@id/nav_soundOnOff" android:title="@string/sound" app:actionLayout="@layout/widget_switch" />
+    </group>
+    <item android:title="">
+        <menu>
+            <item android:icon="@drawable/ic_headset_mic_black_48px" android:id="@id/nav_help" android:title="Yardım ve Destek" />
+            <item android:icon="@drawable/ic_star2_48px" android:id="@id/nav_grade" android:title="Uygulamayı Değerlendir" />
+            <item android:icon="@drawable/ic_share" android:id="@id/nav_share" android:title="Paylaş" />
+            <item android:icon="@drawable/ic_view_module_black_48px" android:id="@id/nav_more" android:title="Daha Fazla Dil Uygulamaları" />
+        </menu>
+    </item>
+</menu>

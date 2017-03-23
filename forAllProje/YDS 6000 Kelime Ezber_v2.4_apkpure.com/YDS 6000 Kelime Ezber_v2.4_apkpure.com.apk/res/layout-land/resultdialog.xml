@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res-auto" app:orientation="vertical" app:layout_width="match_parent" app:layout_height="match_parent">
+    <RelativeLayout app:orientation="vertical" app:background="@color/colorResultDialogBackground" app:layout_width="match_parent" app:layout_height="match_parent" app:layout_weight="1.0">
+        <TextView app:textAppearance="@style/TextAppearance.AppCompat.Medium" app:id="@+id/titleView" app:background="@color/colorPrimaryDark" app:padding="8dp" app:layout_width="match_parent" app:layout_height="wrap_content" app:text="Kelime Öğrenme" app:layout_alignParentTop="true" />
+        <View app:background="@color/colorResultDialogBackgroundL" app:layout_width="match_parent" app:layout_height="UNKNOWN_DATA_0x101" app:layout_below="@+id/title_item" />
+        <LinearLayout app:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:orientation="vertical" app:layout_width="wrap_content" app:layout_height="wrap_content" app:layout_centerInParent="true">
+            <TextView app:textAppearance="@style/TextAppearance.AppCompat.Medium" app:textStyle="bold" app:id="@+id/messageTextView" app:layout_width="wrap_content" app:layout_height="wrap_content" app:text="MÜKEMMEL!" />
+            <LinearLayout app:orientation="horizontal" app:id="@+id/linearLayoutImage" app:layout_width="wrap_content" app:layout_height="wrap_content" app:layout_margin="16dp">
+                <ImageView app:id="@+id/scoreimageView1" app:layout_width="UNKNOWN_DATA_0x3c01" app:layout_height="UNKNOWN_DATA_0x3c01" app:layout_marginRight="8dp" app:alpha="0.4" app:srcCompat="@drawable/ic_star_48px" />
+                <ImageView app:id="@+id/scoreimageView2" app:layout_width="UNKNOWN_DATA_0x3c01" app:layout_height="UNKNOWN_DATA_0x3c01" app:layout_marginRight="8dp" app:alpha="0.4" app:srcCompat="@drawable/ic_star_48px" />
+                <ImageView app:id="@+id/scoreimageView3" app:layout_width="UNKNOWN_DATA_0x3c01" app:layout_height="UNKNOWN_DATA_0x3c01" app:alpha="0.4" app:srcCompat="@drawable/ic_star_48px" />
+            </LinearLayout>
+            <TextView app:textAppearance="@style/TextAppearance.AppCompat.Medium" app:id="@+id/scoreTextView" app:layout_width="wrap_content" app:layout_height="wrap_content" app:text="Puanınız: 1000" />
+            <TextView app:textAppearance="@style/TextAppearance.AppCompat.Medium" app:id="@+id/highScoreTextView" app:padding="8dp" app:layout_width="wrap_content" app:layout_height="wrap_content" app:layout_marginBottom="16dp" app:text="En Yüksek Puan: 1000" />
+        </LinearLayout>
+        <LinearLayout app:orientation="vertical" app:layout_width="wrap_content" app:layout_height="wrap_content" app:layout_marginRight="16dp" app:layout_alignParentRight="true" app:layout_centerVertical="true">
+            <ImageButton app:id="@+id/homeImageButton" app:background="@color/colorResultDialogBackground" app:layout_width="wrap_content" app:layout_height="wrap_content" app:srcCompat="@drawable/ic_home_48px" />
+            <ImageButton app:id="@+id/replayImageButton" app:background="@color/colorResultDialogBackground" app:layout_width="wrap_content" app:layout_height="wrap_content" app:srcCompat="@drawable/ic_replay_48px" />
+            <ImageButton app:id="@+id/gotoImageButton" app:background="@color/colorResultDialogBackground" app:layout_width="wrap_content" app:layout_height="wrap_content" app:srcCompat="@drawable/ic_goto_48px" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout app:background="@color/cardview_light_background" app:layout_width="match_parent" app:layout_height="match_parent" app:layout_weight="1.0" app:alpha="0.4" /> />

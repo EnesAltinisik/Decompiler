@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.pinarsu.siparis.view.TextView android:textSize="12dp" android:textStyle="bold" android:textColor="0x106000b" android:id="@+id/tvDate" android:background="@color/blue_dark" android:paddingLeft="12dp" android:paddingTop="2dp" android:paddingBottom="2dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="17 Mart" />
+    <LinearLayout android:gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:orientation="horizontal" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:id="@+id/imPhoto" android:background="0x106000b" android:layout_width="UNKNOWN_DATA_0x4801" android:layout_height="UNKNOWN_DATA_0x4801" android:scaleType="fitCenter" android:adjustViewBounds="true" />
+        <LinearLayout android:gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:orientation="vertical" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.pinarsu.siparis.view.TextView android:textSize="14dp" android:textStyle="bold" android:textColor="@color/blue_dark" android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2 Adet" />
+            <com.pinarsu.siparis.view.TextView android:textSize="12dp" android:textColor="@color/blue_dark" android:id="@+id/tvDetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="19 LT Damacana" style="@style/mediumTvStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

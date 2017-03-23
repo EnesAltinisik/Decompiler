@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap android:src="@drawable/b51" android:antialias="true" android:filter="true" android:tileMode="repeat" android:alpha="0.5"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

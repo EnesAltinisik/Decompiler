@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:id="@+id/linear" android:layout_width="match_parent" android:layout_height="wrap_content"
+    <LinearLayout android:orientation="horizontal" android:background="@color/blue_light" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp">
+        <ImageView android:background="@color/blue_dark" android:padding="12dp" android:layout_width="UNKNOWN_DATA_0x3001" android:layout_height="match_parent" android:src="@drawable/home" android:scaleType="fitCenter" android:adjustViewBounds="true" />
+        <LinearLayout android:gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:orientation="vertical" android:paddingLeft="8dp" android:paddingTop="4dp" android:paddingBottom="4dp" android:layout_width="UNKNOWN_DATA_0x1" android:layout_height="match_parent" android:layout_weight="1.0">
+            <com.pinarsu.siparis.view.TextView android:textSize="14dp" android:textStyle="bold" android:textColor="0x106000b" android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ofis 1" />
+            <com.pinarsu.siparis.view.TextView android:textSize="14dp" android:textStyle="bold" android:textColor="0x106000b" android:id="@+id/tvDetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ofis 1" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:id="@+id/imRightArrow" android:paddingRight="8dp" android:visibility="gone" android:layout_width="UNKNOWN_DATA_0x1801" android:layout_height="UNKNOWN_DATA_0x1801" android:src="@drawable/right_arrow" android:scaleType="fitCenter" />
+        <ImageView android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:id="@+id/imEdit" android:padding="8dp" android:visibility="gone" android:layout_width="UNKNOWN_DATA_0x2801" android:layout_height="UNKNOWN_DATA_0x2801" android:src="@drawable/edit_white" android:scaleType="fitCenter" />
+        <ImageView android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:id="@+id/imDelete" android:padding="8dp" android:visibility="gone" android:layout_width="UNKNOWN_DATA_0x2801" android:layout_height="UNKNOWN_DATA_0x2801" android:src="@drawable/delete_white" android:scaleType="fitCenter" />
+    </LinearLayout>
+    <View android:background="0x106000b" android:layout_width="match_parent" android:layout_height="UNKNOWN_DATA_0x102" />
+</LinearLayout>

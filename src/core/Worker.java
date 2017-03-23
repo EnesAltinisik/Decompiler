@@ -80,7 +80,7 @@ public class Worker extends SwingWorker<Integer, String> {
 			publish("creating java code");
 			Helper.writeJavaCode(sta, ret, name, parameter, ic);
 			publish("creting apk");
-			String[] a = new String[] { "ant", "debug", "-f", "projeForSmali" };
+			String[] a = new String[] { "ant/usr/bin/ant", "debug", "-f", "projeForSmali" };
 			FindAndDecomplier.exec(a);
 			String hata = FindAndDecomplier.error;
 			if (!hata.equals("")) {
@@ -90,7 +90,7 @@ public class Worker extends SwingWorker<Integer, String> {
 			publish("creating smali file");
 			String[] b = new String[] { "rm", "projeForSmali/out", "-r" };
 			FindAndDecomplier.exec(b);
-			a = new String[] { "apktool", "d", "projeForSmali/bin/MyName-debug-unaligned.apk", "-o",
+			a = new String[] { "./apktool", "d", "projeForSmali/bin/MyName-debug-unaligned.apk", "-o",
 					"projeForSmali/out" };
 
 			FindAndDecomplier.exec(a);

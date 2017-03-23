@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res-auto" tmall:orientation="vertical" tmall:background="0x106000b" tmall:layout_width="match_parent" tmall:layout_height="wrap_content">
+    <FrameLayout tmall:id="@+id/frame" tmall:layout_width="match_parent" tmall:layout_height="UNKNOWN_DATA_0xc801">
+        <android.support.v4.view.ViewPager tmall:id="@+id/viewPager" tmall:layout_width="match_parent" tmall:layout_height="wrap_content" />
+        <com.pinarsu.siparis.view.ViewPagerIndicator tmall:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" tmall:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" tmall:id="@+id/indicator" tmall:layout_width="wrap_content" tmall:layout_height="wrap_content" tmall:layout_margin="4dp" tmall:indicator_spacing="5dp" />
+    </FrameLayout>
+    <LinearLayout tmall:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" tmall:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill" tmall:orientation="horizontal" tmall:id="@+id/linearCurrentAddress" tmall:background="@color/blue_light" tmall:padding="12dp" tmall:layout_width="match_parent" tmall:layout_height="UNKNOWN_DATA_0x3c01">
+        <ImageView tmall:clickable="false" tmall:layout_width="UNKNOWN_DATA_0x1401" tmall:layout_height="UNKNOWN_DATA_0x1401" tmall:src="@drawable/map_pin" />
+        <com.pinarsu.siparis.view.TextView tmall:textAppearance="?unknown_attr_ref: 1010041" tmall:textColor="0x106000b" tmall:id="@+id/tvAddress" tmall:clickable="false" tmall:layout_width="wrap_content" tmall:layout_height="wrap_content" tmall:layout_marginLeft="12dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -20,7 +20,7 @@ Name: res/drawable-mdpi-v4/ic_launcher.png
 SHA1-Digest: 6k/R4N4dl+2lHpJOJCWef7jxlY0=
 
 Name: classes.dex
-SHA1-Digest: hKrW1nQj1pLGGqkH4LC+r8qdJ2I=
+SHA1-Digest: iHx4PmkyNkWJ6qSAx62m0f0Vt3k=
 
 Name: res/drawable-ldpi-v4/ic_launcher.png
 SHA1-Digest: sC6NScxZZMtc5e67P5pRpUVHZtw=

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res-auto" app:id="@+id/activity_tests" app:background="@drawable/back" app:padding="@dimen/activity_vertical_margin" app:layout_width="match_parent" app:layout_height="match_parent">
+    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager app:id="@+id/hicvpgr" app:layout_width="match_parent" app:layout_height="match_parent" app:icvp_center_page_scale_offset="20dp" app:icvp_max_page_scale="0.9" app:icvp_medium_scaled="true" app:icvp_min_page_scale="0.6" app:icvp_min_page_scale_offset="5dp" app:icvp_scroll_duration="300" />
+</RelativeLayout>

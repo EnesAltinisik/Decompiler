@@ -66,10 +66,10 @@ public class FindAndDecomplier {
 		name = name.substring(0, name.length() - 4);
 		String[] a;
 		if (dORb.equals("d"))
-			a = new String[] { "apktool", "d", file.getAbsolutePath(), "-o",
+			a = new String[] { "./apktool", "d", file.getAbsolutePath(), "-o",
 					"forAllProje/" + name + "/" + file.getName().substring(0, file.getName().length() - 4) };
 		else
-			a = new String[] { "apktool", "b", "forAllProje/" + name + "/" + name, "-o", "outApk/" + name + ".apk" };
+			a = new String[] { "./apktool", "b", "forAllProje/" + name + "/" + name, "-o", "outApk/" + name + ".apk" };
 		exec(a);
 	}
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView" android:layout_width="fill_parent" android:layout_height="fill_parent" app:cardCornerRadius="8.0dip" app:cardElevation="12.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/relativeLayoutId" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/linear_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="2.0" android:layout_above="@id/title_itemlayout" android:layout_alignParentTop="true">
+            <LinearLayout android:orientation="horizontal" android:id="@id/linear_layout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="8.0dip" app:cardElevation="12.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                    <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="clickCard" android:textAlignment="center" />
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="8.0dip" app:cardElevation="12.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                    <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="clickCard" android:textAlignment="center" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/linear_layout2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="8.0dip" app:cardElevation="12.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                    <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="clickCard" android:textAlignment="center" />
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="8.0dip" app:cardElevation="12.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                    <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="clickCard" android:textAlignment="center" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+        <View android:id="@id/splitter" android:background="@color/colorPrimaryTextColor" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignBottom="@id/linear_layout" />
+        <android.support.design.widget.CoordinatorLayout android:gravity="center" android:orientation="horizontal" android:id="@id/title_itemlayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <ImageView android:layout_gravity="center|left" android:id="@id/isdone" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" app:srcCompat="@drawable/ic_done_black_48px" />
+            <TextView android:textSize="24.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="@color/colorPrimaryTextColor" android:layout_gravity="center" android:id="@id/title_item" android:background="@drawable/md_transparent" android:padding="32.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textAlignment="center" />
+            <ImageView android:layout_gravity="center" android:id="@id/sound" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:alpha="0.1" app:srcCompat="@drawable/ic_speaker" />
+        </android.support.design.widget.CoordinatorLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

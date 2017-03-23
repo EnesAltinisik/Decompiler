@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tmall="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/frame" android:layout_width="fill_parent" android:layout_height="200.0dip">
+        <android.support.v4.view.ViewPager android:id="@id/viewPager" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.pinarsu.siparis.view.ViewPagerIndicator android:gravity="bottom|center" android:layout_gravity="bottom|center" android:id="@id/indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0dip" tmall:indicator_spacing="5.0dip" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/linearCurrentAddress" android:background="@color/blue_light" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <ImageView android:clickable="false" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/map_pin" />
+        <com.pinarsu.siparis.view.TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@android:color/white" android:id="@id/tvAddress" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" />
+    </LinearLayout>
+</LinearLayout>

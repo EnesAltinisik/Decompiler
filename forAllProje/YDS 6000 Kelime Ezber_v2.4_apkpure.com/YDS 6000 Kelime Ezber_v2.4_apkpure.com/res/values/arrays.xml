@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="items">
+        <item>İngilizce kelimede sorun var</item>
+        <item>İngilizce türünde sorun var (İsim, Fiil vb.)</item>
+        <item>Türkçe kelime çevirisinde sorun var</item>
+        <item>İngilizce WordNet tanımında sorun var</item>
+    </string-array>
+    <array name="multi_select_list_preference_default_value" />
+    <string-array name="pref_options">
+        <item>5 Test</item>
+        <item>6 Test</item>
+        <item>7 Test</item>
+        <item>8 Test</item>
+    </string-array>
+    <string-array name="pref_values">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+</resources>

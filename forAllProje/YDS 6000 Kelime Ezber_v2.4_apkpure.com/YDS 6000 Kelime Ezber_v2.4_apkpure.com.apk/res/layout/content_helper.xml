@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res-auto" app:layout_width="match_parent" app:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <ExpandableListView app:id="@+id/lvExp" app:layout_width="match_parent" app:layout_height="match_parent" app:indicatorLeft="?unknown_attr_ref: 1010050" app:divider="0x1060000" app:dividerHeight="0.5dp" />
+</android.support.v4.widget.NestedScrollView>

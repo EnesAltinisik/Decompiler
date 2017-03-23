@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.badoualy.stepperindicator.StepperIndicator android:id="@id/stepIndicator" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" app:stpi_stepCount="5" />
+    <LinearLayout android:orientation="vertical" android:id="@id/linear_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="4.0" android:layout_below="@id/stepIndicator" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="horizontal" android:id="@id/linear_layout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/linear_layout2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/linear_layout3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView5" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item5" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView6" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item6" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/linear_layout4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView7" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item7" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView android:layout_gravity="center" android:id="@id/cardView8" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" app:cardCornerRadius="4.0dip" app:cardElevation="6.0dip" app:cardUseCompatPadding="true" app:cardPreventCornerOverlap="false">
+                <TextView android:textSize="16.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff005fb0" android:gravity="center" android:id="@id/txt_item8" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textAlignment="center" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
