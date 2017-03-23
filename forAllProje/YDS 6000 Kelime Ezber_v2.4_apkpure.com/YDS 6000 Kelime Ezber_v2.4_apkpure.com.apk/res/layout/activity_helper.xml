@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res-auto" app:fitsSystemWindows="true" app:layout_width="match_parent" app:layout_height="match_parent">
-    <android.support.design.widget.AppBarLayout app:theme="@style/AppTheme_AppBarOverlay" app:layout_width="match_parent" app:layout_height="wrap_content">
-        <android.support.v7.widget.Toolbar app:id="@id/toolbar" app:background="?attr/colorPrimary" app:layout_width="match_parent" app:layout_height="UNKNOWN_DATA_0x7f01006b" app:popupTheme="@style/AppTheme_PopupOverlay" />
-    </android.support.design.widget.AppBarLayout>
-    <ExpandableListView app:id="@+id/lvExp" app:paddingTop="60dp" app:layout_width="match_parent" app:layout_height="match_parent" app:layout_marginTop="16dp" app:indicatorLeft="?unknown_attr_ref: 1010050" app:divider="0x1060000" app:dividerHeight="0.5dp" />
-</android.support.design.widget.CoordinatorLayout>

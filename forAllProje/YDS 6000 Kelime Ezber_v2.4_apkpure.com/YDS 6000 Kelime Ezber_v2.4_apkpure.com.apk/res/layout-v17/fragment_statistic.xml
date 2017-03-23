@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:paddingLeft="@dimen/activity_vertical_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_vertical_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView android:id="@+id/section_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAlignment="center" />
-    <LinearLayout android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" android:orientation="horizontal" android:id="@+id/linear_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/section_label" android:layout_centerHorizontal="true">
-        <com.github.mikephil.charting.charts.PieChart android:id="@+id/piechart1" android:layout_width="UNKNOWN_DATA_0xf001" android:layout_height="UNKNOWN_DATA_0xf001" />
-        <com.github.mikephil.charting.charts.PieChart android:id="@+id/piechart2" android:layout_width="UNKNOWN_DATA_0xf001" android:layout_height="UNKNOWN_DATA_0xf001" />
-    </LinearLayout>
-    <com.github.mikephil.charting.charts.PieChart android:id="@+id/piechart3" android:layout_width="UNKNOWN_DATA_0xf001" android:layout_height="UNKNOWN_DATA_0xf001" android:layout_below="@+id/linear_layout" android:layout_centerHorizontal="true" />
-</RelativeLayout>

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<appwidget-provider android:minWidth="160.0dip" android:minHeight="120.0dip" android:updatePeriodMillis="86400000" android:initialLayout="@layout/oxford_widget" android:previewImage="@drawable/widgetpreview" android:resizeMode="horizontal|vertical" android:initialKeyguardLayout="@layout/oxford_widget" android:widgetCategory="home_screen|keyguard"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

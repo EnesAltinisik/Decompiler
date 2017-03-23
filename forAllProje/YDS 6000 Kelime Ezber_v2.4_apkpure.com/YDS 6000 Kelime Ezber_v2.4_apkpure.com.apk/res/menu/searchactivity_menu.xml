@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res-auto">
-    <item app:id="@+id/english" app:title="İngilizce" app:showAsAction="always" />
-    <item app:icon="@drawable/ic_swap_horiz_black_24dp" app:id="@+id/action" app:title="1" app:showAsAction="always" />
-    <item app:id="@+id/turkish" app:title="Türkçe" app:showAsAction="always" />
-</menu>

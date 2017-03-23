@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:orientation="vertical" android:id="@+id/linear" android:background="0x106000d" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <View android:background="@color/blue_light" android:layout_width="match_parent" android:layout_height="UNKNOWN_DATA_0x101" />
-    <LinearLayout android:gravity="top|bottom|center_vertical|fill_vertical|center|fill" android:orientation="horizontal" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <com.pinarsu.siparis.view.TextView android:textSize="16dp" android:textStyle="bold" android:textColor="@color/blue_light" android:id="@+id/tvTitle" android:padding="12dp" android:layout_width="UNKNOWN_DATA_0x1" android:layout_height="wrap_content" android:text="Kayıtlı Adreslerim" android:layout_weight="1.0" />
-        <ImageView android:id="@+id/imPhoto" android:layout_width="UNKNOWN_DATA_0x1401" android:layout_height="UNKNOWN_DATA_0x1401" android:src="@drawable/right_arrow" android:scaleType="fitCenter" />
-    </LinearLayout>
-</LinearLayout>

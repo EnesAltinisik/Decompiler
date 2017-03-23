@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end" android:id="@+id/linear" android:paddingLeft="8dp" android:paddingTop="6dp" android:paddingRight="8dp" android:paddingBottom="6dp" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <ImageView android:id="@+id/im" android:layout_width="UNKNOWN_DATA_0x3001" android:layout_height="UNKNOWN_DATA_0x3001" android:scaleType="fitCenter" android:adjustViewBounds="true" />
-</LinearLayout>

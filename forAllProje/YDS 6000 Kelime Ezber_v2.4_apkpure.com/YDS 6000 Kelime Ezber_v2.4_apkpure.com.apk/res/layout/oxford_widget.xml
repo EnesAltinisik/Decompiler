@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res-auto" app:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:background="@color/transparent" app:padding="@dimen/widget_margin" app:layout_width="match_parent" app:layout_height="match_parent">
-    <LinearLayout app:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:orientation="vertical" app:layout_width="match_parent" app:layout_height="match_parent" app:weightSum="2.0">
-        <TextView app:textSize="24sp" app:textStyle="bold|italic" app:textColor="#ffffff" app:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:id="@+id/appwidget_texten" app:background="#235f73" app:clickable="true" app:layout_width="match_parent" app:layout_height="UNKNOWN_DATA_0x1" app:layout_margin="8dp" app:text="@string/appwidget_texten" app:layout_weight="1.0" />
-        <TextView app:textSize="24sp" app:textStyle="bold|italic" app:textColor="#ffffff" app:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" app:id="@+id/appwidget_texttr" app:background="#329abd" app:layout_width="match_parent" app:layout_height="UNKNOWN_DATA_0x1" app:layout_margin="8dp" app:text="@string/appwidget_texttr" app:layout_weight="1.0" />
-    </LinearLayout>
-</FrameLayout>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <raw name="accept">res/raw/accept.mp3</raw>
-    <raw name="alkis2">res/raw/alkis2.mp3</raw>
-    <raw name="correct">res/raw/correct.mp3</raw>
-    <raw name="flick">res/raw/flick.mp3</raw>
-    <raw name="incorrect">res/raw/incorrect.mp3</raw>
-</resources>

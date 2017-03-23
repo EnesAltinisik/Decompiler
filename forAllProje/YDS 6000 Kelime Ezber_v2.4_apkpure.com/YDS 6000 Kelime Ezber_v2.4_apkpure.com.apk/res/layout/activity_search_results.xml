@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res-auto" app:fitsSystemWindows="true" app:layout_width="match_parent" app:layout_height="match_parent">
-    <android.support.v7.widget.RecyclerView app:id="@+id/my_recycler_view" app:paddingTop="60dp" app:scrollbars="vertical" app:layout_width="match_parent" app:layout_height="match_parent" />
-    <com.arlib.floatingsearchview.FloatingSearchView app:id="@+id/floating_search_view" app:layout_width="match_parent" app:layout_height="match_parent" app:floatingSearch_searchBarMarginTop="4dp" app:floatingSearch_searchBarMarginLeft="4dp" app:floatingSearch_searchBarMarginRight="4dp" app:floatingSearch_leftActionMode="4" app:floatingSearch_showSearchKey="true" app:floatingSearch_searchHint="Arama..." app:floatingSearch_dismissOnOutsideTouch="true" app:floatingSearch_suggestionsListAnimDuration="250" app:floatingSearch_close_search_on_keyboard_dismiss="false" app:floatingSearch_dimBackground="false" />
-</android.support.design.widget.CoordinatorLayout>

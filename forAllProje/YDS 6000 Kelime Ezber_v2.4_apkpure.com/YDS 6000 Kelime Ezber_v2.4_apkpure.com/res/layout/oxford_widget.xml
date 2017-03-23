@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:gravity="center" android:background="@color/transparent" android:padding="@dimen/widget_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="2.0">
-        <TextView android:textSize="24.0sp" android:textStyle="bold|italic" android:textColor="#ffffffff" android:gravity="center" android:id="@id/appwidget_texten" android:background="#ff235f73" android:clickable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_margin="8.0dip" android:text="@string/appwidget_texten" android:layout_weight="1.0" />
-        <TextView android:textSize="24.0sp" android:textStyle="bold|italic" android:textColor="#ffffffff" android:gravity="center" android:id="@id/appwidget_texttr" android:background="#ff329abd" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_margin="8.0dip" android:text="@string/appwidget_texttr" android:layout_weight="1.0" />
-    </LinearLayout>
-</FrameLayout>

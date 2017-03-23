@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/linearOrderHeader" android:background="@color/blue_light" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.pinarsu.siparis.view.TextView android:textSize="24.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/tvStep1" android:background="@drawable/circle_dark_blue" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="1" />
-    <com.pinarsu.siparis.view.TextView android:textSize="24.0dip" android:textColor="@android:color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="8.0dip" android:text="...." />
-    <com.pinarsu.siparis.view.TextView android:textSize="24.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/tvStep2" android:background="@drawable/circle_dark_blue" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="2" />
-    <com.pinarsu.siparis.view.TextView android:textSize="24.0dip" android:textColor="@android:color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="8.0dip" android:text="...." />
-    <com.pinarsu.siparis.view.TextView android:textSize="24.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/tvStep3" android:background="@drawable/circle_dark_blue" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="3" />
-</LinearLayout>

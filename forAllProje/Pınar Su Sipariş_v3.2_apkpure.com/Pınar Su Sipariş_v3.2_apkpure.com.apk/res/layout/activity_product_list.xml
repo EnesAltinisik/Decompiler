@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-    <include layout="@layout/toolbar" />
-    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
-        <ListView android:id="@+id/lv" android:background="0x106000b" android:scrollbars="UNKNOWN_DATA_0x0" android:layout_width="match_parent" android:layout_height="match_parent" android:divider="0x0" />
-        <com.pinarsu.siparis.view.TextView android:textColor="@color/blue_dark" android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end" android:id="@+id/tvAddedAll" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tüm Ürünleri Eklediniz" />
-    </FrameLayout>
-</LinearLayout>

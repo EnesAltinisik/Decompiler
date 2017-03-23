@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/toolbar" />
-    <ImageView android:layout_gravity="center" android:id="@id/imMatchSuccess" android:background="@android:color/transparent" android:layout_width="180.0dip" android:layout_height="180.0dip" android:src="@drawable/match_success" android:scaleType="fitCenter"
-      xmlns:android="http://schemas.android.com/apk/res/android" />
-</FrameLayout>
