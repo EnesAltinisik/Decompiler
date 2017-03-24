@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <drawable name="ic_launcher">res/drawable-ldpi/ic_launcher.png</drawable>
-    <drawable name="ic_launcher">res/drawable-mdpi/ic_launcher.png</drawable>
-    <drawable name="ic_launcher">res/drawable-hdpi/ic_launcher.png</drawable>
-    <drawable name="ic_launcher">res/drawable-xhdpi/ic_launcher.png</drawable>
-</resources>
