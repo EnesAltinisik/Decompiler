@@ -21,6 +21,8 @@ import javax.xml.crypto.dsig.keyinfo.PGPData;
 
 import org.zeroturnaround.zip.ZipUtil;
 
+import deneme.Deneme;
+
 public class FindAndDecomplier {
 	static DefaultMutableTreeNode node;
 	static File file;
@@ -44,7 +46,7 @@ public class FindAndDecomplier {
 		JPanel panel = new JPanel();
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setAcceptAllFileFilterUsed(true);
-		fileChooser.setCurrentDirectory(new File("forAllZip"));
+		fileChooser.setCurrentDirectory(new File(Deneme.getPath()+"forAllZip"));
 		String[] exts = { "asd" };
 		String description = "supported files: " + Arrays.toString(exts).replace('[', '(').replace(']', ')');
 		fileChooser.setFileFilter(new FileNameExtensionFilter(description, exts));
@@ -53,9 +55,9 @@ public class FindAndDecomplier {
 		if (ret == JFileChooser.APPROVE_OPTION) {
 			File file1 = fileChooser.getSelectedFile();
 			String projeName = file1.getName().substring(0, file1.getName().length() - 4);
-			File Unzip = new File("forAllProje/" + projeName);
+			File Unzip = new File(Deneme.getPath()+"forAllProje/" + projeName);
 			ZipUtil.unpack(file1, Unzip);
-			file = new File("forAllProje/" + projeName + ".apk");
+			file = new File(Deneme.getPath()+"forAllProje/" + projeName + ".apk");
 			return projeName;
 		}
 		return null;
@@ -65,11 +67,12 @@ public class FindAndDecomplier {
 		String name = FindAndDecomplier.file.getName();
 		name = name.substring(0, name.length() - 4);
 		String[] a;
+		
 		if (dORb.equals("d"))
-			a = new String[] { "./apktool", "d", file.getAbsolutePath(), "-o",
-					"forAllProje/" + name + "/" + file.getName().substring(0, file.getName().length() - 4) };
+			a = new String[] { Deneme.getPath()+"apktool", "d", file.getAbsolutePath(), "-o",
+					Deneme.getPath()+"forAllProje/" + name + "/" + file.getName().substring(0, file.getName().length() - 4) };
 		else
-			a = new String[] { "./apktool", "b", "forAllProje/" + name + "/" + name, "-o", "outApk/" + name + ".apk" };
+			a = new String[] { Deneme.getPath()+"apktool", "b", Deneme.getPath()+"forAllProje/" + name + "/" + name, "-o", Deneme.getPath()+"outApk/" + name + ".apk" };
 		exec(a);
 	}
 
@@ -153,8 +156,8 @@ public class FindAndDecomplier {
 	public static void isle() throws Exception {
 		String name = FindAndDecomplier.file.getName();
 		name = name.substring(0, name.length() - 4);
-		String[] a = new String[] { "jadx-master/build/jadx/bin/jadx", file.getAbsolutePath(), "-d",
-				"forAllProje/" + name + "/" + file.getName() };
+		String[] a = new String[] { Deneme.getPath()+"jadx-master/build/jadx/bin/jadx", file.getAbsolutePath(), "-d",
+				Deneme.getPath()+"forAllProje/" + name + "/" + file.getName() };
 		exec(a);
 	}
 

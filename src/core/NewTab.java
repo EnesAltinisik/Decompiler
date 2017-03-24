@@ -29,7 +29,7 @@ public class NewTab {
 			return;
 		String name = FindAndDecomplier.file.getName();
 		name = name.substring(0, name.length() - 4);
-		String s = "forAllProje/" + name + "/";
+		String s = Deneme.getPath()+"forAllProje/" + name + "/";
 		if (path != null)
 			for (int i = 0; i < path.getPathCount(); i++) {
 				s += path.getPathComponent(i) + "/";

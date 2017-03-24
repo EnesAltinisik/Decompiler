@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public deneme()V
+.method public as()V
     .locals 0
 
     .prologue

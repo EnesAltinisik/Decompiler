@@ -80,7 +80,7 @@ public class Worker extends SwingWorker<Integer, String> {
 			publish("creating java code");
 			Helper.writeJavaCode(sta, ret, name, parameter, ic);
 			publish("creting apk");
-			String[] a = new String[] { "ant/usr/bin/ant", "debug", "-f", "projeForSmali" };
+			String[] a = new String[] { Deneme.getPath()+"ant/usr/bin/ant", "debug", "-f", Deneme.getPath()+"projeForSmali" };
 			FindAndDecomplier.exec(a);
 			String hata = FindAndDecomplier.error;
 			if (!hata.equals("")) {
@@ -88,14 +88,16 @@ public class Worker extends SwingWorker<Integer, String> {
 				return -1;
 			}
 			publish("creating smali file");
-			String[] b = new String[] { "rm", "projeForSmali/out", "-r" };
+			String[] b = new String[] { "rm", Deneme.getPath()+"projeForSmali/out", "-r" };
 			FindAndDecomplier.exec(b);
-			a = new String[] { "./apktool", "d", "projeForSmali/bin/MyName-debug-unaligned.apk", "-o",
-					"projeForSmali/out" };
+			
+			
+			a = new String[] { Deneme.getPath()+"apktool", "d", Deneme.getPath()+"projeForSmali/bin/MyName-debug-unaligned.apk", "-o",
+					Deneme.getPath()+"projeForSmali/out" };
 
 			FindAndDecomplier.exec(a);
 			String smali = Helper
-					.fileToString("projeForSmali/out" + "/smali/com/yourdomain/yourproject/MyActivity.smali");
+					.fileToString(Deneme.getPath()+"projeForSmali/out/smali/com/yourdomain/yourproject/MyActivity.smali");
 			Helper.sm.getLblSmaliCode().setText(smali);
 			publish("finish");
 			Helper.sm.getBtnCopy().setVisible(true);
@@ -105,7 +107,7 @@ public class Worker extends SwingWorker<Integer, String> {
 			Helper.saveAllTab();
 			FindAndDecomplier.apktool("");
 			String[] a = new String[] { "jarsigner", "-verbose", "-sigalg", "SHA1withRSA", "-digestalg", "SHA1",
-					"-keystore", "mykey.keystore", "outApk/" + FindAndDecomplier.file.getName(), "alNAme" };
+					"-keystore",  Deneme.getPath()+"mykey.keystore", Deneme.getPath()+"outApk/" + FindAndDecomplier.file.getName(), "alNAme" };
 			String s = "";
 			for (int i = 0; i < a.length; i++) {
 				s += a[i] + " ";
@@ -115,13 +117,13 @@ public class Worker extends SwingWorker<Integer, String> {
 			Helper.saveAllTab();
 			FindAndDecomplier.apktool("");
 			String[] a = new String[] { "jarsigner", "-verbose", "-sigalg", "SHA1withRSA", "-digestalg", "SHA1",
-					"-keystore", "mykey.keystore", "outApk/" + FindAndDecomplier.file.getName(), "alNAme" };
+					"-keystore",  Deneme.getPath()+"mykey.keystore", Deneme.getPath()+"outApk/" + FindAndDecomplier.file.getName(), "alNAme" };
 			String s = "";
 			for (int i = 0; i < a.length; i++) {
 				s += a[i] + " ";
 			}
 			FindAndDecomplier.execSign(a);
-			a = new String[] { "adb", "install", "outApk/" + FindAndDecomplier.file.getName() };
+			a = new String[] { "adb", "install", Deneme.getPath()+"outApk/" + FindAndDecomplier.file.getName() };
 			FindAndDecomplier.exec(a);
 			if (FindAndDecomplier.error.equals("Failure [INSTALL_FAILED_ALREADY_EXISTS]")) {
 				String packageName = Helper.findPackageName();

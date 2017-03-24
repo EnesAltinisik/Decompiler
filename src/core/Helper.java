@@ -97,7 +97,7 @@ public class Helper {
 		String name = FindAndDecomplier.file.getName();
 		name = name.substring(0, name.length() - 4);
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode(name);
-		name = "forAllProje/" + name + "/" + name + ".apk";
+		name = Deneme.getPath()+"forAllProje/" + name + "/" + name + ".apk";
 		File file = new File(name);
 
 		DefaultMutableTreeNode add = findFolder(s, file);
@@ -113,7 +113,7 @@ public class Helper {
 	}
 
 	public static void openFindTree(TreePath path) {
-		String s = "forAllProje/";
+		String s = Deneme.getPath()+"forAllProje/";
 		if (path != null)
 			for (int i = 0; i < path.getPathCount(); i++) {
 				if (i == 1) {
@@ -334,7 +334,7 @@ public class Helper {
 		saveAllTab();
 		String name = FindAndDecomplier.file.getName();
 		name = name.substring(0, name.length() - 4);
-		ZipUtil.pack(new File("forAllProje/" + name), new File("forAllZip/" + name + ".asd"));
+		ZipUtil.pack(new File(Deneme.getPath()+"forAllProje/" + name), new File(Deneme.getPath()+"forAllZip/" + name + ".asd"));
 
 	}
 
@@ -464,7 +464,7 @@ public class Helper {
 
 	public static String findPackageName() throws Exception {
 		String name = FindAndDecomplier.file.getName().substring(0, FindAndDecomplier.file.getName().length() - 4);
-		File file = new File("forAllProje/" + name + "/" + name + "/AndroidManifest.xml");
+		File file = new File(Deneme.getPath()+"forAllProje/" + name + "/" + name + "/AndroidManifest.xml");
 
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String line;
@@ -595,7 +595,7 @@ public class Helper {
 				+ son;
 		try {
 			BufferedWriter bw = new BufferedWriter(
-					new FileWriter("projeForSmali/src/com/yourdomain/yourproject/MyActivity.java"));
+					new FileWriter(Deneme.getPath()+"projeForSmali/src/com/yourdomain/yourproject/MyActivity.java"));
 			bw.write(code);
 			bw.close();
 		} catch (IOException e) {
@@ -614,7 +614,7 @@ public class Helper {
 
 	public static void exit() {
 		try {
-			File directory = new File("forAllProje");
+			File directory = new File(Deneme.getPath()+"forAllProje");
 			if (directory.exists()) {
 				File[] files = directory.listFiles();
 				if (null != files) {

@@ -5,15 +5,17 @@ import java.io.File;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import deneme.Deneme;
+
 public class CreateTree {
 	public static DefaultMutableTreeNode getNode(File file) {
 		String name=FindAndDecomplier.file.getName();
 		name=name.substring(0, name.length() - 4);
-		return createNodes(new File("forAllProje/"+name+"/"+file.getName()));
+		return createNodes(new File(Deneme.getPath()+"forAllProje/"+name+"/"+file.getName()));
 	}
 	public static DefaultMutableTreeNode getNode(String name) {
 		String subName=name+".apk";
-		return createNodes(new File("forAllProje/"+name+"/"+subName));
+		return createNodes(new File(Deneme.getPath()+"forAllProje/"+name+"/"+subName));
 	}
 
 	private static DefaultMutableTreeNode createNodes(File file) {
