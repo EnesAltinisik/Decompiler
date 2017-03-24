@@ -33,9 +33,8 @@ public class Deneme {
 		
 		File file = new File(path+"jadx-master/build");
 		if (!file.exists()) {
-			String[] a = { "/bin/sh", "-c", "cd "+path+"jadx-master; ./gradlew dist" };
+			String[] a = { "/bin/sh", "-c", "cd "+path+"jadx-master; ./gradlew dist; cd ..; mkdir forAllProje; mkdir forAllZip; mkdir outApk" };
 			FindAndDecomplier.exec(a);
-			
 		}
 		
 
